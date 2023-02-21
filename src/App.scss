@@ -1,0 +1,141 @@
+$Orange: hsl(25, 97%, 53%);
+$White: hsl(0, 0%, 100%);
+$LightGrey: hsl(217, 12%, 63%);
+$MediumGrey: hsl(216, 12%, 54%);
+$DarkGrey: #262E38;
+$DarkBlue: #1F2630;
+$VeryDarkBlue: hsl(216, 12%, 8%);
+
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+@mixin flex-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.App {
+	position: absolute;
+	top: 0;
+	min-height: 100vh;
+	width: 100%;
+	background-color: $VeryDarkBlue;
+	@include flex-center();
+}
+
+.card {
+	background-color: $DarkBlue;
+	width: 350px;
+	height: 375px;
+	border-radius: 30px;
+	padding: 30px;
+	color: $White;
+
+	&-1 {
+
+		min-height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		
+		&__logo {
+			background-color: $DarkGrey;
+			width: 40px;
+			height: 40px;
+			padding: 9px;
+			border-radius: 50%;
+			@include flex-center();
+		}
+
+		&__para {
+			margin-top: -25px;
+			color: $LightGrey;
+			font-size: 15px;
+		}
+
+		&__rating-container {
+
+			display: flex;
+			justify-content: space-between;
+
+			&__rating {
+				border-radius: 50px;
+				padding: 9px;
+				background-color: $DarkGrey;
+				width: 40px;
+				height: 40px;
+				text-align: center;
+				@include flex-center();
+
+				&--selected {
+					background-color: $MediumGrey;
+				}
+
+				&:hover {
+					background-color: $Orange;
+					cursor: pointer;
+				}
+
+			}
+		}
+
+		&__submit-btn {
+			background-color: $Orange;
+			text-align: center;
+			border-radius: 50px;
+			padding: 10px;
+
+			&:hover {
+				background-color: $White;
+				color: $Orange;
+				cursor: pointer;
+			}
+		}
+	}
+
+
+
+	&-2 {
+
+		min-height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: center;
+		padding: 7px;
+
+		&__graphic {
+			width: 60%;
+		}
+
+		&__rating {
+			width: 62%;
+			background-color: $DarkGrey;
+			color: orange;
+			font-size: 14px;
+			padding: 5px;
+			text-align: center;
+			border-radius: 50px;
+		}
+		
+		&__para {
+			margin-top: -20px;
+			text-align: center;
+			color: $LightGrey;
+			font-size: 13px;
+			line-height: 22px;
+		}
+
+
+	}
+}
+
+.radio--hidden,
+.hidden{
+	display: none;
+}
